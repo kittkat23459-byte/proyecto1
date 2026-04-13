@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo animado */
+/* Fondo animado */
+body {
+    background: linear-gradient(270deg, #fa8585, #43e7dc, #3e9db2,#fd6fec, #9dd53c, #f6d365);
+    background-size: 800% 800%;
+    animation: gradientShift 10s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1{
+    animation: fadeIn 1.5s ease-in-out;
+    font-family: "Latin Modern Roman";
+    font-style: italic;
+    font-size: 35px;
+    text-align: center;
+    padding: 20px 0;
+    color:rgb(255, 255, 255);
+     text-shadow: 6px 10px 9px #063c48;  /* Sombra: 6px derecha, 6px abajo, 9px difuminado, 60% opacidad */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+ 
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px;
+    grid-gap: 20px;
+    padding: 100px 0;
+}
+ 
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;  /* Bordes redondeados */
+    transition: transform 0.3s ease;  /* Transición suave */
+}
+
+.box img:hover {
+    transform: scale(1.05);  /* Se agranda un 5% al pasar el mouse */
+}
+ 
+.box:nth-child(1) {
+    grid-column-start: span 2;
+}
+ 
+.box:nth-child(4) {
+    grid-column-start: span 2;
+}
+.box:nth-child(4) {
+    grid-column-start: span 2;
+}
+
+@media(max-width:990px) {
+    .container {
+    padding: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.box:nth-child(1) {
+    grid-column-start: span 1;
+}
+
+.box:nth-child(4) {
+    grid-column-start: span 1;
+}
+
+/* Botón al final del contenido */
+.back-button {
+    text-align: right;  /* Cambiado de center a right */
+    margin: 50px 30px 30px 0;  /* Margen derecho para separarlo del borde */
+}
+
+.back-button button {
+    background: linear-gradient(135deg, #1ca0a7, #85e6fc);
+    color: white;
+    text-align: right;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Lucida Handwriting', cursive;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.back-button button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5347ff, #7c86b8);
+    box-shadow: 0 6px 20px rgba(138, 74, 74, 0.3);
+}
+
+.back-button button:active {
+    transform: scale(0.95);
+}
